@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <title>Form validation</title>
+</head>
+
+<body>
+    <form id="form" class="form">
+        <div class="wrap">
+            <h1>Rise</h1>
+            <h3>Can you give us your data please!</h3>
+
+
+            <div class="input-control">
+                <label for="fname">Email</label>
+                <input id="email" type="email" class="cool" />
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="lname">Country</label>
+                <input id="country" type="text" class="cool" />
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="lname">Zip code</label>
+                <input id="zip-code" type="text" class="cool" />
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="lname">Password</label>
+                <input id="password" type="password" class="cool" />
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Confirm password</label>
+                <input id="cpassword" type="password" class="cool" />
+                <div class="error"></div>
+            </div>
+            <input type="submit" class="submit-btn" value="Submit">
+
+
+
+        </div>
+
+    </form>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
