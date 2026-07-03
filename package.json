@@ -1,0 +1,25 @@
+{
+  "name": "form-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickonyi/form-validation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nickonyi/form-validation/issues"
+  },
+  "homepage": "https://github.com/nickonyi/form-validation#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2"
+  }
+}
