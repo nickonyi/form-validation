@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/nickonyi/form-validation#readme",
   "dependencies": {
+    "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-validator": "^7.3.2"
   }
