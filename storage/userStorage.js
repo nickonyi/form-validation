@@ -13,4 +13,14 @@ class UserStorage {
   getUsers() {
     return Object.values(this.storage);
   }
+
+  updateUser(id, { firstName, lastName }) {
+    this.storage[id] = { id, firstName, lastName };
+  }
+
+  deleteUser(id) {
+    delete this.storage[id];
+  }
 }
+
+export const usersStorage = new UserStorage();
