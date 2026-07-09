@@ -9,13 +9,13 @@ const validateUser = [
     .trim()
     .isAlpha()
     .withMessage(`First name ${alphaErr}`)
-    .isLength({ min: 1, max: 0 })
+    .isLength({ min: 1, max: 10 })
     .withMessage(`FirstName ${lengthErr}`),
   body("lastName")
     .trim()
     .isAlpha()
     .withMessage(`Last name ${alphaErr}`)
-    .isLength({ min: 1, max: 0 })
+    .isLength({ min: 1, max: 10 })
     .withMessage(`LastName ${lengthErr}`),
 ];
 
@@ -34,9 +34,8 @@ export const usersCreatePost = [
   validateUser,
   (req, res) => {
     const errors = validationResult(req);
-    console.log(errors.array());
 
-    if (!errors.array()) {
+    if (!errors.isEmpty()) {
       return res.status(400).render("createUser", {
         title: "Create User",
         errors: errors.array(),
