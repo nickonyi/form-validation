@@ -17,6 +17,20 @@ const validateUser = [
     .withMessage(`Last name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
     .withMessage(`LastName ${lengthErr}`),
+  body("email")
+    .trim()
+    .isEmail()
+    .withMessage("Email must be a valid email address."),
+  body("age")
+    .trim()
+    .optional({ values: "falsy" })
+    .isInt({ min: 0, max: 120 })
+    .withMessage("Age must be a number between 0 and 120."),
+  body("bio")
+    .trim()
+    .optional({ values: "falsy" })
+    .isLength({ max: 200 })
+    .withMessage("Bio must be at most 200 characters long."),
 ];
 
 export const usersListGet = (req, res) => {
@@ -41,8 +55,8 @@ export const usersCreatePost = [
         errors: errors.array(),
       });
     }
-    const { firstName, lastName } = matchedData(req);
-    usersStorage.addUser({ firstName, lastName });
+    const { firstName, lastName, email, age, bio } = matchedData(req);
+    usersStorage.addUser({ firstName, lastName, email, age, bio });
     res.redirect("/");
   },
 ];
@@ -70,8 +84,14 @@ export const usersUpdatePost = [
       });
     }
 
-    const { firstName, lastName } = matchedData(req);
-    usersStorage.updateUser(req.params.id, { firstName, lastName });
+    const { firstName, lastName, email, age, bio } = matchedData(req);
+    usersStorage.updateUser(req.params.id, {
+      firstName,
+      lastName,
+      email,
+      age,
+      bio,
+    });
     res.redirect("/");
   },
 ];
