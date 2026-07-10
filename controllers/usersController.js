@@ -100,3 +100,18 @@ export const usersDeletePost = (req, res) => {
   usersStorage.deleteUser(req.params.id);
   res.redirect("/");
 };
+
+export const usersSearchGet = (req, res) => {
+  const searchTerm = req.query.search;
+  const users = usersStorage.getUsers();
+  const filteredUsers = users.filter(
+    (user) =>
+      user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.lastName.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
+  res.render("search", {
+    title: "User List",
+    users: filteredUsers,
+  });
+};

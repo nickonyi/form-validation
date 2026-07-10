@@ -6,6 +6,11 @@
 </head>
 <body>
   <h1><%= title %></h1>
+
+  <form action="/search" method="GET">
+      <input type="text" placeholder="Search user" name="search" id="search" />
+      <button type="submit">Search</button>
+    </form>
   <ul>
     <% if (locals.users) { %>
       <% users.forEach(user => { %>
